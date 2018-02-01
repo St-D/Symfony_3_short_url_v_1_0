@@ -1,0 +1,32 @@
+<div class="row">
+
+    <form method="POST" id="formForAjaxReq" action="" >
+
+        {#{{ form_widget(form) }}#}
+
+        <p><strong>Enter URL here:</strong><br>
+            <input type="url" name="l_url" placeholder="long URL" class="form-control" value=""/><br>
+
+
+        <p><strong>Enter for check desired short URL here:</strong><br>
+            <input type="url" name="s_url" placeholder="short URL" class="form-control" value=""/><br>
+
+
+            <!--<input type="button" id="btnSub1" value="Отправить" class="btn btn-default"/> -->
+
+            <button type="button" class="btn btn-default" id ='btnSub'>
+                <span class="fa fa-arrow-circle-right" style="color: red;"></span>&nbsp;Submit</button>
+
+            <button type="reset" class="btn btn-default" id ='reset_btn'>
+                <span class="fa fa-refresh" style="color: red;"></span>&nbsp;Reset enter data</button>
+
+    </form>
+
+
+    <br>
+
+    <div id="res_form"></div>
+    <div id="add_btn_form"></div>
+    <div id="error_area"></div>
+
+</div>

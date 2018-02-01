@@ -1,0 +1,24 @@
+urls_table_index:
+    path:     /
+    defaults: { _controller: "ShortUrlBundle:Urls_table:index" }
+    methods:  GET
+
+urls_table_show:
+    path:     /{id}/show
+    defaults: { _controller: "ShortUrlBundle:Urls_table:show" }
+    methods:  GET
+
+urls_table_new:
+    path:     /new
+    defaults: { _controller: "ShortUrlBundle:Urls_table:new" }
+    methods:  [GET, POST]
+
+urls_table_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ShortUrlBundle:Urls_table:edit" }
+    methods:  [GET, POST]
+
+urls_table_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ShortUrlBundle:Urls_table:delete" }
+    methods:  DELETE

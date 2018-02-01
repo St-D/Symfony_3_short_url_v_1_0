@@ -1,0 +1,15 @@
+<h1> OK </h1>
+
+{% block page_content %}
+    {# FOR ARRAY #}
+    {% if val is defined %}
+        {% for val in test_ar %}
+            {{ val }}<br>
+        {% endfor %}
+    {% endif %}
+
+    {# #}
+    {{ key }}
+
+
+{% endblock %}

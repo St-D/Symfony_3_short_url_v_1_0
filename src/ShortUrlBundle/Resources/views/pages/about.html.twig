@@ -1,0 +1,29 @@
+{% extends 'base_short_url_app.html.twig' %}
+
+{% block page_head_button %}
+    <p class="container">
+<div class="btn-group pull-right" id="btn_top">
+
+    <a type="button" class="btn btn-default btn-xs" href="{{ path('short_url_index_html') }}" >
+        <i class="fa fa-info"></i>&nbsp;Main Page</a>
+
+    <a type="button" class="btn btn-default btn-xs" href="{{ path('short_url_web_html') }}">
+        <i class="fa fa-cogs"></i>&nbsp;For Web Masters</a>
+
+    <a type="button" class="btn btn-default btn-xs" href="{{ path('short_url_show_html') }}">
+        <i class="fa fa-hdd-o"></i>&nbsp;Show Log</a>
+
+</div>
+{% endblock %}
+
+{% block page_header %}
+    <h4 id="header_show_log">for all inquiries regarding advertising and website operation please contact:
+        <span id="for_line"> {{ contact_mail }}</span></h4>
+{% endblock %}
+
+{% block page_content %}
+    <h4 style='margin-right: 15%; margin-left: 90%; margin-top: 10%'>{{ cur_date }}</h4>
+{% endblock %}
+
+
+{% block page_footer %}{% endblock %}

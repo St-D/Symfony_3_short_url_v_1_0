@@ -1,0 +1,65 @@
+
+# ------ site pages ----------------------------------------------------------
+
+### ~Form_handlerController~
+# main page
+short_url_index_html:
+    path:     /
+    defaults: { _controller: ShortUrlBundle:Form_handler:form }
+
+# AJAX
+#short_url_index_ajax:
+#    path:     /
+#    defaults: { _controller: ShortUrlBundle:Form_handler:ajax }
+
+
+
+#### ~Web_pagesController~
+# about page
+short_url_about_html:
+    path:     /about
+    defaults: { _controller: ShortUrlBundle:Web_pages:about }
+
+# show db for users page
+short_url_show_html:
+    path:     /statistics
+    defaults: { _controller: ShortUrlBundle:Web_pages:statistics }
+
+# web masters info (web API)
+short_url_web_html:
+    path:     /api_info
+    defaults: { _controller: ShortUrlBundle:Web_pages:api_info }
+# ------ ----- --------------------------------------------------------------
+
+# ------ site functions -----------------------------------------------------
+#### ~Web_functionsController~
+# web masters info (web API)
+short_url_api:
+    path:     /api
+    defaults: { _controller: ShortUrlBundle:Web_functions:api}
+    methods:  [GET]
+
+
+
+# for redirect to SHORT URL
+short_url_redirect:
+    path:     /{short_key}
+    defaults: { _controller: ShortUrlBundle:Web_functions:resend }
+    requirements:
+     short_key: '\w{3}'
+
+# ---------------------------------------------------------------------------
+
+# ------ debug --------------------------------------------------------------
+#ajax_debug_route:
+#   path:     /ajax_request
+#   defaults: { _controller: ShortUrlBundle:Form_handler:deb }
+# ------ ----- --------------------------------------------------------------
+
+# ------ admin --------------------------------------------------------------
+short_url_urls_table:
+    resource: "@ShortUrlBundle/Resources/config/routing/urls_table.yml"
+    prefix:   /stas_admin
+# ------ ----- --------------------------------------------------------------
+
+

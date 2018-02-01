@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{{ page_title }}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/shorturl/css/bootstrap.css') }}" type="text/css" rel="stylesheet" />
+            <link href="{{ asset('bundles/shorturl/font-Awesome/css/font-awesome.min.css') }}" type="text/css" rel="stylesheet" />
+            <link href="{{ asset('bundles/shorturl/css/style.css') }}" type="text/css" rel="stylesheet" />
+        {% endblock %}
+
+        {% block link %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% endblock %}
+
+
+        {% block script %}
+            <script type="text/javascript" src="{{ asset('bundles/shorturl/js/jquery-3.2.1.js') }}"></script>
+            {#<script type="text/javascript" src="{{ asset('bundles/shorturl/js/ajax_proc.js') }}"></script>#}
+            {% include '@ShortUrl/sup/ajax_conroller.html.twig' %}
+            <script type="text/javascript" src="{{ asset('bundles/shorturl/js/bootstrap.js') }}"></script>
+        {% endblock %}
+
+    </head>
+
+    <body>
+        {# for testin and debug#}
+        {% block for_test_info %}{% endblock %}
+
+        {#not use now#}
+        {% block body %}{% endblock %}
+
+        {##}
+        {% block page_head_button %}{% endblock %}
+
+        {##}
+        {% block page_header %}{% endblock %}
+
+        {##}
+        {% block page_content %}{% endblock %}
+
+        {##}
+        {% block page_footer %}{% endblock %}
+
+        {#not use now#}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

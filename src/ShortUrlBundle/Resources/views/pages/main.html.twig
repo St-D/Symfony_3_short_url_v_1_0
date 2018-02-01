@@ -1,0 +1,28 @@
+{% extends 'base_short_url_app.html.twig' %}
+
+{% block page_head_button %}
+    <p class="container">
+<div class="btn-group pull-right" id="btn_top">
+
+    <a type="button" class="btn btn-default btn-xs" href="{{ path('short_url_about_html') }}" >
+        <i class="fa fa-info"></i>&nbsp;About Us</a>
+
+    <a type="button" class="btn btn-default btn-xs" href="{{ path('short_url_web_html') }}">
+        <i class="fa fa-cogs"></i>&nbsp;For Web Masters</a>
+
+    <a type="button" class="btn btn-default btn-xs" href="{{ path('short_url_show_html') }}">
+        <i class="fa fa-hdd-o"></i>&nbsp;Show Log</a>
+
+</div>
+{% endblock %}
+
+{% block page_header %}
+<h2>Free Service Generate A <span id="for_line"> Short URL</span></h2>
+{% endblock %}
+
+{% block page_content %}
+{% include '@ShortUrl/sup/new_form.html.twig' %}
+{% endblock %}
+
+
+{% block page_footer %}{% endblock %}

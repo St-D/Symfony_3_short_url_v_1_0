@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Urls_table</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ urls_table.id }}</td>
+            </tr>
+            <tr>
+                <th>Longurl</th>
+                <td>{{ urls_table.longUrl }}</td>
+            </tr>
+            <tr>
+                <th>Shorturl</th>
+                <td>{{ urls_table.shortUrl }}</td>
+            </tr>
+            <tr>
+                <th>Shortcount</th>
+                <td>{{ urls_table.shortCount }}</td>
+            </tr>
+            <tr>
+                <th>Datecreate</th>
+                <td>{{ urls_table.dateCreate|date('Y-m-d')}}</td>
+            </tr>
+            <tr>
+                <th>Datelink</th>
+                <td>{{ urls_table.dateLink|date('Y-m-d')}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('urls_table_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('urls_table_edit', { 'id': urls_table.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Urls_tables list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Longurl</th>
+                <th>Shorturl</th>
+                <th>Shortcount</th>
+                <th>Datecreate</th>
+                <th>Datelink</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for urls_table in urls_tables %}
+            <tr>
+                <td><a href="{{ path('urls_table_show', { 'id': urls_table.id }) }}">{{ urls_table.id }}</a></td>
+                <td>{{ urls_table.longUrl }}</td>
+                <td>{{ urls_table.shortUrl }}</td>
+                <td>{{ urls_table.shortCount }}</td>
+                <td>{{ urls_table.dateCreate|date('Y-m-d') }}</td>
+                <td>{{ urls_table.dateLink|date('Y-m-d') }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('urls_table_show', { 'id': urls_table.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('urls_table_edit', { 'id': urls_table.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('urls_table_new') }}">Create a new urls_table</a>
+        </li>
+    </ul>
+{% endblock %}
